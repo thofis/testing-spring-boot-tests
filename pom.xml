@@ -18,6 +18,7 @@
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>
 		<testcontainers.version>1.15.3</testcontainers.version>
+		<embedded-mariadb.version>2.0.8</embedded-mariadb.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,7 +27,21 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+			<version>3.0.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
 		</dependency>
 
 		<dependency>
@@ -48,6 +63,12 @@
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.playtika.testcontainers</groupId>
+			<artifactId>embedded-mariadb</artifactId>
+			<version>${embedded-mariadb.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
