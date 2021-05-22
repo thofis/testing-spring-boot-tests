@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "tester",
+    "username": "testerX",
+    "email": "email@email.com",
+    "phone": "123",
+    "website": null,
+    "address": {
+      "street": "street",
+      "suite": "suite",
+      "city": "city",
+      "zipcode": null,
+      "geo": {
+        "lat": 0.1,
+        "lng": 0.2
+      }
+    },
+    "company": {
+      "name": "company",
+      "catchPhrase": "catch",
+      "bs": "bs"
+    }
+  },
+  {
+    "id": 2,
+    "name": "tester2",
+    "username": "testerY",
+    "email": "email2@email.com",
+    "phone": "234",
+    "website": null,
+    "address": {
+      "street": "street2",
+      "suite": "suite2",
+      "city": "city2",
+      "zipcode": null,
+      "geo": {
+        "lat": 0.1,
+        "lng": 0.2
+      }
+    },
+    "company": {
+      "name": "company2",
+      "catchPhrase": "catch2",
+      "bs": "bs2"
+    }
+  }
+]

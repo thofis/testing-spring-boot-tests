@@ -1,9 +1,13 @@
-package com.example.testingspringboottests.feign;
+package com.example.testingspringboottests.webmvc;
 
 import java.util.List;
 
+import com.example.testingspringboottests.feign.JsonPlaceholderClient;
+import com.example.testingspringboottests.feign.UserModel;
+import feign.FeignException.NotFound;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +24,14 @@ public class JsonPlaceholderController {
 	}
 
 	@GetMapping(path = "users/{id}", produces = "application/json")
-	public UserModel getUserViaFeignClient(@PathVariable("id") long id) {
-		return client.getUserById(id).getBody();
+	public ResponseEntity<UserModel> getUserViaFeignClient(@PathVariable("id") long id) {
+		final ResponseEntity<UserModel> userById;
+		try {
+			userById = client.getUserById(id);
+		}
+		catch (NotFound e) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(userById.getBody());
 	}
 }

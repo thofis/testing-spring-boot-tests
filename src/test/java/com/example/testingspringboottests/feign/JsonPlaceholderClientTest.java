@@ -13,7 +13,10 @@ import wiremock.com.google.common.io.ByteStreams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration;
@@ -35,6 +38,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 		JmxAutoConfiguration.class,
 		LocalDevToolsAutoConfiguration.class,
 		RestTemplateAutoConfiguration.class,
+		DataSourceAutoConfiguration.class,
+		DataSourceTransactionManagerAutoConfiguration.class,
+		HibernateJpaAutoConfiguration.class,
 		SimpleDiscoveryClientAutoConfiguration.class })
 @ContextConfiguration(
 		initializers = WireMockInitializer.class)

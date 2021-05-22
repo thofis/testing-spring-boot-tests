@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-@ActiveProfiles("test")
+@ActiveProfiles({ "test", "testcontainers" })
 class UserRepositoryTest {
 	@Autowired
 	TestEntityManager testEntityManager;
@@ -40,6 +40,8 @@ class UserRepositoryTest {
 		assertThat(optionalUser.isPresent()).isTrue();
 		User user = optionalUser.get();
 		assertThat(user.getName()).isEqualTo("Tester");
+		assertThat(user.getEmail()).isEqualTo("test@test.de");
+		assertThat(user.getId()).isGreaterThan(0);
 	}
 
 	@Test
