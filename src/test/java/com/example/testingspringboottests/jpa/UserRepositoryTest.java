@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -17,13 +18,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-@ActiveProfiles({ "test", "testcontainers" })
+//@ActiveProfiles({ "test", "testcontainers" })
+@ActiveProfiles("test")
 class UserRepositoryTest {
 	@Autowired
 	TestEntityManager testEntityManager;
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Value("${spring.datasource.url}")
+	String datasourceUrl;
 
 	@BeforeEach
 	public void beforeEach() {
@@ -32,6 +37,7 @@ class UserRepositoryTest {
 				.email("test@test.de")
 				.build();
 		testEntityManager.persistAndFlush(testUser);
+		System.out.println(datasourceUrl);
 	}
 
 	@Test
