@@ -1,4 +1,4 @@
-package utils;
+package com.example.testingspringboottests.utils;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

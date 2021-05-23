@@ -8,11 +8,11 @@ import com.example.testingspringboottests.feign.CompanyModel;
 import com.example.testingspringboottests.feign.GeoModel;
 import com.example.testingspringboottests.feign.JsonPlaceholderClient;
 import com.example.testingspringboottests.feign.UserModel;
+import com.example.testingspringboottests.utils.ResourceReader;
 import feign.FeignException.NotFound;
 import feign.Request;
 import feign.RequestTemplate;
 import org.junit.jupiter.api.Test;
-import utils.ResourceReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
