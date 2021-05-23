@@ -1,4 +1,4 @@
-package com.example.testingspringboottests.feign;
+package com.example.testingspringboottests.restclient;
 
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;

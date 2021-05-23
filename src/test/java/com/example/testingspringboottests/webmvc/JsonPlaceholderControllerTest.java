@@ -3,11 +3,11 @@ package com.example.testingspringboottests.webmvc;
 import java.util.HashMap;
 import java.util.List;
 
-import com.example.testingspringboottests.feign.AddressModel;
-import com.example.testingspringboottests.feign.CompanyModel;
-import com.example.testingspringboottests.feign.GeoModel;
-import com.example.testingspringboottests.feign.JsonPlaceholderClient;
-import com.example.testingspringboottests.feign.UserModel;
+import com.example.testingspringboottests.restclient.AddressModel;
+import com.example.testingspringboottests.restclient.CompanyModel;
+import com.example.testingspringboottests.restclient.GeoModel;
+import com.example.testingspringboottests.restclient.JsonPlaceholderClient;
+import com.example.testingspringboottests.restclient.UserModel;
 import com.example.testingspringboottests.utils.ResourceReader;
 import feign.FeignException.NotFound;
 import feign.Request;

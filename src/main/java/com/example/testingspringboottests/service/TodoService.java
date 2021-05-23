@@ -3,7 +3,7 @@ package com.example.testingspringboottests.service;
 import java.util.Objects;
 import java.util.Optional;
 
-import com.example.testingspringboottests.feign.TodoClient;
+import com.example.testingspringboottests.restclient.TodoClient;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;

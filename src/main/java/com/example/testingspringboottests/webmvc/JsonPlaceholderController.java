@@ -2,8 +2,8 @@ package com.example.testingspringboottests.webmvc;
 
 import java.util.List;
 
-import com.example.testingspringboottests.feign.JsonPlaceholderClient;
-import com.example.testingspringboottests.feign.UserModel;
+import com.example.testingspringboottests.restclient.JsonPlaceholderClient;
+import com.example.testingspringboottests.restclient.UserModel;
 import feign.FeignException.NotFound;
 import lombok.RequiredArgsConstructor;
 

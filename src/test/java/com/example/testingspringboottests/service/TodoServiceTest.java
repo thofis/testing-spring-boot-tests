@@ -3,7 +3,7 @@ package com.example.testingspringboottests.service;
 import java.util.HashMap;
 import java.util.Optional;
 
-import com.example.testingspringboottests.feign.TodoClient;
+import com.example.testingspringboottests.restclient.TodoClient;
 import feign.FeignException.NotFound;
 import feign.Request;
 import feign.RequestTemplate;

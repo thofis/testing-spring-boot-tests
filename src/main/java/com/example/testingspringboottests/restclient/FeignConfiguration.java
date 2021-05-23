@@ -1,4 +1,4 @@
-package com.example.testingspringboottests.feign;
+package com.example.testingspringboottests.restclient;
 
 import feign.Logger;
 import feign.Logger.Level;

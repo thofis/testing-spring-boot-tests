@@ -1,4 +1,4 @@
-package com.example.testingspringboottests.feign;
+package com.example.testingspringboottests.restclient;
 
 import java.io.Serializable;
 
@@ -11,8 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class GeoModel implements Serializable {
-	private double lat;
+public class CompanyModel implements Serializable {
+	private String name;
 
-	private double lng;
+	private String catchPhrase;
+
+	private String bs;
+
 }
