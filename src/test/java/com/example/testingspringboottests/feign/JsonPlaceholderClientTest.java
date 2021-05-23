@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+import com.example.testingspringboottests.service.TodoService;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import org.junit.jupiter.api.AfterEach;
@@ -21,6 +22,7 @@ import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfigu
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -62,6 +64,9 @@ class JsonPlaceholderClientTest {
 	public void afterEach() {
 		wireMockServer.resetAll();
 	}
+
+	@MockBean
+	private TodoService todoService;
 
 	@Test
 	public void test_get_users() throws IOException {

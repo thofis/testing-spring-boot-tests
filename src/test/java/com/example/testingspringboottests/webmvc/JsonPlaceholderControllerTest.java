@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.mockito.Mockito.when;
 
-@WebMvcTest
+@WebMvcTest(controllers = { JsonPlaceholderController.class })
 @ActiveProfiles("test")
 class JsonPlaceholderControllerTest {
 
